@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.head-text {
+    @apply sm:text-5xl text-3xl font-semibold sm:leading-snug font-poppins;
+  }
+
+
+.rounded-nr {
+  border-top-right-radius: 0;
+  border-top-left-radius: 0.5rem; /* 這個值可以根據你的需求調整 */
+  border-bottom-right-radius: 0.5rem; /* 這個值可以根據你的需求調整 */
+  border-bottom-left-radius: 0.5rem; /* 這個值可以根據你的需求調整 */
+}
