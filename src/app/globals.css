@@ -4,15 +4,46 @@
 @tailwind components;
 @tailwind utilities;
 
-
 .head-text {
     @apply sm:text-5xl text-3xl font-semibold sm:leading-snug font-poppins;
-  }
-
+}
 
 .rounded-nr {
-  border-top-right-radius: 0;
-  border-top-left-radius: 0.5rem; /* 這個值可以根據你的需求調整 */
-  border-bottom-right-radius: 0.5rem; /* 這個值可以根據你的需求調整 */
-  border-bottom-left-radius: 0.5rem; /* 這個值可以根據你的需求調整 */
+    border-top-right-radius: 0;
+    border-top-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+}
+
+.subhead-text {
+    @apply font-semibold sm:text-3xl text-xl relative font-poppins;
+}
+
+.block-container {
+    position: relative;
+    width: 5rem;
+    height: 5rem;
+    transition: transform 250ms, box-shadow 250ms;
+    perspective: 500px;
+}
+
+.block-container:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.block-container .btn-front {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: #ffffff33;
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    transition: transform 250ms;
+    transform-style: preserve-3d;
+    transform-origin: top left;
+    overflow: hidden;
 }
