@@ -1,92 +1,37 @@
-"use client";
-import Card from "./components/Card";
-import dynamic from "next/dynamic";
-import { useState, useEffect } from "react";
-import { FaAngleDoubleDown } from "react-icons/fa";
-import { VscLayoutMenubar } from "react-icons/vsc";
-import HeaderbarItem from "./components/HeaderbarItem";
+import React from "react";
+import Image from "next/image";
+import { skills } from "../../public/Skills";
 
-const Scene = dynamic(() => import("./components/Scene"), { ssr: false });
-
-export default function Home() {
-  const [showCard, setShowCard] = useState(false);
-  const [showScrollTip, setShowScrollTip] = useState(true);
-  const [selectedContent, setSelectedContent] = useState("about");
-
-  const handleScrollChange = (offset) => {
-    if (offset >= 0.8) {
-      setShowCard(true);
-      setShowScrollTip(false);
-    } else if (offset <= 0.5) {
-      setShowScrollTip(true);
-      setShowCard(false);
-    } else {
-      setShowCard(false);
-    }
-  };
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition =
-        window.scrollY /
-        (document.documentElement.scrollHeight - window.innerHeight);
-      handleScrollChange(scrollPosition);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  const handleHeaderbarItemClick = (content) => {
-    setSelectedContent(content);
-    setShowCard(true); // 確保卡片顯示
-  };
-
+export default function page() {
   return (
-    <div className="relative h-screen w-screen bg-slate-950">
-
-      <Scene onScrollChange={handleScrollChange} />
-
-      <div
-        className={`text-white font-medium absolute z-10 top-3/4 left-1/2 transform -translate-x-1/2 
-        -translate-y-1/2 w-10/12 h-10 pt-2 pb-2 bg-black rounded-lg flex flex-col items-center justify-center 
-        transition-opacity duration-1000 ${
-          showScrollTip ? "opacity-60" : "opacity-0"
-        }`}
-      >
-        <h2 className="">滾動打開電腦...</h2>
-        <FaAngleDoubleDown size={30} className="animate-bounceSmall" />
+    <>
+      <h1 className="head-text text-white mt-2">嗨,我是俊杰</h1>
+      <div className="mt-5 flex flex-col gap-3 text-white">
+        <p>
+          我是一位認真負責、努力學習的社會新鮮人，對技術與新知抱持著熱忱，勇於接受各種挑戰
+          。在大學就學期間除了學習系上規範的課程內容之外，我更會利用其他課餘時間，透過YouTube
+          的教學影片自我學習新技術，例如影像辨識，圖片生成，前後端架設…等等。這個過程讓我學到更多知識，讓我看到更多的面向，同時提升處理問題的能力。
+        </p>
       </div>
-
-      <div
-        className={`absolute z-20 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3/4 
-          h-screen transition-opacity duration-1000 ${
-            showCard ? "opacity-100" : "opacity-0"
-          }`}
-      >
-        <div className="flex flex-col justify-center ">
-          <div className="flex flex-row justify-end text-white ">
-            <HeaderbarItem
-              title={"關於我"}
-              className={"bg-blue-700 rounded-t-lg p-3 hover:bg-orange-700"}
-              onClick={() => handleHeaderbarItemClick("about")}
-            />
-            <HeaderbarItem
-              title={"工作經歷"}
-              className={"bg-blue-800 rounded-t-lg p-3 hover:bg-orange-800"}
-              onClick={() => handleHeaderbarItemClick("experience")}
-            />
-            <HeaderbarItem
-              title={"聯絡我"}
-              className={"bg-blue-900 rounded-t-lg p-3 hover:bg-orange-900"}
-              onClick={() => handleHeaderbarItemClick("about")}
-            />
-          </div>
+      <div className="py-10 flex flex-col mt-3">
+        <h3 className="subhead-text text-white">我的技能</h3>
+        <div className="mt-16 flex flex-wrap gap-12">
+          {skills.map((skill) => (
+            <div
+              key={skill.name}
+              className="block-container w-20 h-20 flex items-center justify-center"
+            >
+              <Image
+                src={skill.img}
+                alt={skill.name}
+                width={40}
+                height={40}
+                className="w-1/2 h-1/2 object-contain"
+              />
+            </div>
+          ))}
         </div>
-        <Card content={selectedContent} />
       </div>
-    </div>
+    </>
   );
 }

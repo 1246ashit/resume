@@ -1,9 +1,11 @@
-export default function HeaderbarItem({ title, className,onClick }) {
+import Link from "next/link";
+
+export default function HeaderbarItem({ title, className, href }) {
   return (
-    <div className={` ${className} cursor-pointer`} onClick={onClick}>
+    <Link href={href} className={` ${className} cursor-pointer`}>
         <p className="text-center font-semibold">
-            {title}
+          {title}
         </p>
-    </div>
+    </Link>
   );
 }
