@@ -11,7 +11,7 @@ export default function Experience() {
         {projects.map((project) => (
           <div
             className={`lg:w-[500px] w-full rounded-lg p-4 ${project.color}`}
-            key={project.id}
+            key={project.name}
           >
             <div className="mt-5 flex flex-col">
               <h4 className="text-2xl font-poppins font-semibold  ">

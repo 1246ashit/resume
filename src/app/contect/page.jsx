@@ -11,7 +11,7 @@ export default function Contect() {
         <h3 className="mt-6 subhead-text text-white">您可以在這些地方找到我</h3>
         <div className="mt-6 flex flex-wrap gap-16">
           {contectInfo.map((info) => (
-            <div className="w-14 h-14 block-container flex items-center justify-center">
+            <div key={info.name} className="w-14 h-14 block-container flex items-center justify-center">
               <Link href={info.link} target="_blank" className="w-full h-full">
                 <Image
                   src={info.icon}
