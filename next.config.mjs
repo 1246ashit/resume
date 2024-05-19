@@ -7,6 +7,8 @@ const nextConfig = {
       unoptimized: true,
   },
   reactStrictMode: true,
+  assetPrefix: '/resume/',
+  trailingSlash: true,
   };
 
 export default nextConfig;

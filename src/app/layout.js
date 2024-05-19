@@ -3,7 +3,7 @@ import "./globals.css";
 import dynamic from "next/dynamic";
 import { useState, useEffect } from "react";
 import OpenNB from "./components/OpenNB";
-const Scene = dynamic(() => import("./components/Scene"), { ssr: true });
+const Scene = dynamic(() => import("./components/Scene"), { ssr: false });
 import Contents from "./components/Contents";
 
 export default function RootLayout({ children }) {
