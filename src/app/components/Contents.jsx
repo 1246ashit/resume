@@ -15,14 +15,14 @@ export default function Contents({ showCard, children }) {
           href="/"
         />
         <HeaderbarItem
-          title={"工作經歷"}
+          title={"專案經歷"}
           className={"bg-blue-800 rounded-t-lg p-3 hover:bg-orange-800"}
           href="/experience"
         />
         <HeaderbarItem
           title={"聯絡我"}
           className={"bg-blue-900 rounded-t-lg p-3 hover:bg-orange-900"}
-          href="/"
+          href="/contect"
         />
       </div>
       <div className="bg-blue-400  rounded-nr flex items-start justify-center ">

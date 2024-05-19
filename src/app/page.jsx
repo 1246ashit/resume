@@ -1,12 +1,31 @@
+"use client";
 import React from "react";
 import Image from "next/image";
+import dynamic from "next/dynamic";
 import { skills } from "../../public/Skills";
+import { experiences } from "../../public/Project";
+import "react-vertical-timeline-component/style.min.css";
 
-export default function page() {
+const VerticalTimeline = dynamic(
+  () =>
+    import("react-vertical-timeline-component").then(
+      (mod) => mod.VerticalTimeline
+    ),
+  { ssr: false }
+);
+const VerticalTimelineElement = dynamic(
+  () =>
+    import("react-vertical-timeline-component").then(
+      (mod) => mod.VerticalTimelineElement
+    ),
+  { ssr: false }
+);
+
+export default function Page() {
   return (
     <>
-      <h1 className="head-text text-white mt-2">嗨,我是俊杰</h1>
-      <div className="mt-5 flex flex-col gap-3 text-white">
+      <h1 className="head-text mt-2">嗨,我是俊杰</h1>
+      <div className="mt-5 flex flex-col gap-3">
         <p>
           我是一位認真負責、努力學習的社會新鮮人，對技術與新知抱持著熱忱，勇於接受各種挑戰
           。在大學就學期間除了學習系上規範的課程內容之外，我更會利用其他課餘時間，透過YouTube
@@ -14,7 +33,7 @@ export default function page() {
         </p>
       </div>
       <div className="py-10 flex flex-col mt-3">
-        <h3 className="subhead-text text-white">我的技能</h3>
+        <h3 className="subhead-text">我的技能</h3>
         <div className="mt-16 flex flex-wrap gap-12">
           {skills.map((skill) => (
             <div
@@ -30,6 +49,53 @@ export default function page() {
               />
             </div>
           ))}
+        </div>
+        <div className="py-16">
+          <h3 className="subhead-text">工作經驗</h3>
+          <div className="mt-12 flex">
+            <VerticalTimeline>
+              {experiences.map((experience) => (
+                <VerticalTimelineElement
+                  visible={true}
+                  key={experience.name}
+                  date={experience.date}
+                  icon={
+                    experience.icon ? (
+                      <Image
+                        src={experience.icon}
+                        alt={experience.name}
+                        className="rounded-full w-full h-full"
+                      />
+                    ) : (
+                      <div
+                        className="bg-blue-950 rounded-full w-full h-full flex items-center 
+                      justify-center text-white font-bold text-xl"
+                      >
+                        {experience.icon2}
+                      </div>
+                    )
+                  }
+                  contentStyle={{
+                    border: "8px",
+                    borderStyle: "solid",
+                    boxShadow: "none",
+                  }}
+                >
+                  <div>
+                    <h3 className="text-black text-xl font-poppins font-semibold">
+                      {experience.name}
+                    </h3>
+                    <p
+                      className="text-black font-medium font-base"
+                      style={{ margin: 0 }}
+                    >
+                      {experience.description}
+                    </p>
+                  </div>
+                </VerticalTimelineElement>
+              ))}
+            </VerticalTimeline>
+          </div>
         </div>
       </div>
     </>
