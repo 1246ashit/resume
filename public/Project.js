@@ -1,4 +1,6 @@
 import winNexus from './Icon/winNexus.jpg';
+import jobSearch104 from './Icon/104-Logo.png';
+import LinkIn from './Icon/LinkedIn_icon.png';
 
 export const projects = [
     {
@@ -6,7 +8,7 @@ export const projects = [
         description: '使用了Python 程式語言並且導入AI深度學習影像辨識模組例如:Yolo、DeepFace來搭建安全辨識系統，當有異常發生時，能即時透過Line BOT送出警報，而後端的歷史紀錄是透過MSSQL建置資料庫並且使用Python Flask 以MVC的架構搭建網頁讓使用者可以查看或是操作。在整個過程中遇上了不少困難，其中像是模組的問題，導致開發困難，或是組員因為對系統的架構理解有誤，導致工作有所延誤。幸虧透過我與組員和指導老師一次次討論、教學，最後在專題發表會裡獲得評審老師的好評。這對我來說是非常有意義的經驗，透過這次的專題設計過程，也讓我學習到團隊合作跟溝通的重要性。',
         link: 'https://github.com/1246ashit/firebaseForPython',
         video: 'https://www.youtube.com/embed/M7aaMpp_UMM?si=o-L0QBFpaQvLV6vp',
-        color:"bg-gray-700"
+        color:"bg-gray-400"
     },
     {
         name: '實習 北捷採購網開發',
@@ -40,3 +42,17 @@ export const experiences= [
         icon2:'誠'
     },
 ];
+
+
+export const contectInfo=[
+    {
+        name: '104 人力銀行',
+        link: 'https://pda.104.com.tw/profile/share/8sQg4yMLGY7jxDUqDMw3yeQkuk11KZGO',
+        icon:jobSearch104,
+    },
+    {
+        name: 'LinkIn',
+        link: 'https://www.linkedin.com/in/俊杰-李-b40753262',
+        icon:LinkIn,
+    },
+]

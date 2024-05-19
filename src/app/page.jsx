@@ -23,9 +23,9 @@ const VerticalTimelineElement = dynamic(
 
 export default function Page() {
   return (
-    <>
-      <h1 className="head-text mt-2">嗨,我是俊杰</h1>
-      <div className="mt-5 flex flex-col gap-3">
+    <React.Fragment>
+      <h1 className="head-text mt-2 text-white">嗨,我是俊杰</h1>
+      <div className="mt-5 flex flex-col gap-3 text-white">
         <p>
           我是一位認真負責、努力學習的社會新鮮人，對技術與新知抱持著熱忱，勇於接受各種挑戰
           。在大學就學期間除了學習系上規範的課程內容之外，我更會利用其他課餘時間，透過YouTube
@@ -33,7 +33,7 @@ export default function Page() {
         </p>
       </div>
       <div className="py-10 flex flex-col mt-3">
-        <h3 className="subhead-text">我的技能</h3>
+        <h3 className="subhead-text text-white">我的技能</h3>
         <div className="mt-16 flex flex-wrap gap-12">
           {skills.map((skill) => (
             <div
@@ -51,7 +51,7 @@ export default function Page() {
           ))}
         </div>
         <div className="py-16">
-          <h3 className="subhead-text">工作經驗</h3>
+          <h3 className="subhead-text text-white">工作經驗</h3>
           <div className="mt-12 flex">
             <VerticalTimeline>
               {experiences.map((experience) => (
@@ -98,6 +98,6 @@ export default function Page() {
           </div>
         </div>
       </div>
-    </>
+    </React.Fragment>
   );
 }

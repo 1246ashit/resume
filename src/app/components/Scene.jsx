@@ -1,7 +1,7 @@
 "use client";
 import { Canvas, useThree } from "@react-three/fiber";
 import { useState, useEffect } from "react";
-import Model from "./Model";
+import Laptop from "./Laptop";
 import { Suspense } from "react";
 import {
   Environment,
@@ -26,7 +26,7 @@ export default function Scene({ onScrollChange }) {
         <Environment preset="city" />
         <Suspense fallback={<Loader />}>
           <ScrollControls damping={0.2} pages={2}>
-            <Model onScrollChange={onScrollChange} />
+            <Laptop onScrollChange={onScrollChange} />
           </ScrollControls>
         </Suspense>
       </Canvas>

@@ -3,7 +3,7 @@ import { useFrame } from "@react-three/fiber";
 import { useEffect, useRef } from "react";
 
 useGLTF.preload("/laptop.glb");
-export default function Model({onScrollChange }) {
+export default function Laptop({onScrollChange }) {
   const group = useRef(null);
   const { nodes, materials, animations, scene } = useGLTF("/laptop.glb");
   const { actions, clips } = useAnimations(animations, scene);
