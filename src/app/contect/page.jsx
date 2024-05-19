@@ -15,6 +15,7 @@ export default function Contect() {
               <Link href={info.link} target="_blank" className="w-full h-full">
                 <Image
                   src={info.icon}
+                  
                   alt={info.name}
                   className="object-contain"
                 />

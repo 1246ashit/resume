@@ -2,10 +2,10 @@ import { useAnimations, useGLTF, useScroll } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { useEffect, useRef } from "react";
 
-useGLTF.preload("/laptop.glb");
+useGLTF.preload("/resume/laptop.glb");
 export default function Laptop({onScrollChange }) {
   const group = useRef(null);
-  const { nodes, materials, animations, scene } = useGLTF("/laptop.glb");
+  const { nodes, materials, animations, scene } = useGLTF("/resume/laptop.glb");
   const { actions, clips } = useAnimations(animations, scene);
   const scroll = useScroll();
 
