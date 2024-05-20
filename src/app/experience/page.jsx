@@ -6,7 +6,7 @@ import Link from "next/link";
 export default function Experience() {
   return (
     <React.Fragment>
-      <h1 className="head-text  mt-2">工作和專案經歷</h1>
+      <h1 className="head-text  mt-2">工作和專案經歷🧐</h1>
       <div className="flex flex-wrap my-20 gap-16">
         {projects.map((project) => (
           <div
