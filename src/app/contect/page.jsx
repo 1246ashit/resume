@@ -32,7 +32,7 @@ export default function Contect() {
           {contectInfo.map((info) => (
             <div
               key={info.name}
-              className="w-14 h-14 block-container flex items-center justify-center"
+              className="w-14 h-14 block-container flex items-center justify-center rounded-lg"
             >
               <Link href={info.link} target="_blank" className="w-full h-full">
                 <Image
